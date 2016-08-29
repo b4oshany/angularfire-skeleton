@@ -1,0 +1,27 @@
+
+<div class="modal fade" id="upload-profile-pic-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <form name="userForm" class="modal-content module form-module">
+      <div class="toggle"><i class="modal-header fa fa-times fa-pencil"></i>
+        <div data-dismiss="modal" class="tooltip">Click Me</div>
+      </div>
+      <div class="modal-body form">
+          <label>
+              <span>Image</span>
+              <span ng-show="userForm.profile_image.$error.required">is required.</span>
+              <input type="file" ng-file-select="onFileSelect($files)" name="profile_image" placeholder="Image" required />
+          </label>
+      </div>
+      <div class="modal-footer cta">
+          <button type="submit"
+            class="btn btn-block btn-aqua btn-padding"
+           ng-click="upload_image()" >
+              Upload
+          </button>
+          <button type="button" class="btn btn-default btn-block btn-padding" data-dismiss="modal">
+              Cancel
+          </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+
+<div class="modal fade" id="add-user-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <form name="userForm" class="modal-content module form-module">
+      <div class="toggle"><i class="modal-header fa fa-times fa-pencil"></i>
+        <div data-dismiss="modal" class="tooltip">Click Me</div>
+      </div>
+      <div class="modal-body form">
+          <label>
+              <span>Firstname</span>
+              <span ng-show="userForm.firstname.$error.required">is required.</span>
+              <input name="firstname" type="text" placeholder="Firstname" ng-model="new_user.firstname" required />
+          </label>
+          <label>
+              <span>Lastname</span>
+              <span ng-show="userForm.lastname.$error.required">is required.</span>
+              <input name="lastname" type="text" placeholder="Lastname" ng-model="new_user.lastname" required />
+          </label>
+          <label ng-if="enable_key_edits" >
+              <span>Email</span>
+              <span ng-show="userForm.email.$error.required">is required.</span>
+              <span ng-show="userForm.email.$error.email">is invalid.</span>
+              <input name="email" type="email" placeholder="Email" ng-model="new_user.email" required />
+          </label>
+          <label ng-if="enable_key_edits">
+              <span>Password</span>
+              <span ng-show="userForm.password.$error.required">is required.</span>
+              <input name="password" type="password" placeholder="Password" ng-model="new_user.password" required />
+          </label>
+          <label>
+              <span>Contact Number</span>
+              <span ng-show="userForm.contact_num.$error.required">is required.</span>
+              <input name="contact_num" type="text" placeholder="Contact Number" ng-model="new_user.contact_num" required />
+          </label>
+          <label style="display: block">
+              <span>Role</span>
+              <select  name="role" ng-model="new_user.role" class="form-control" required >
+                    <option value="contact-teacher">Contact Teacher</option>
+                    <option value="jta-user">JTA User</option>
+                    <option value="dpk-user">DPK User</option>
+              </select>
+          </label>
+          <label style="display: block">
+              <span>School</span>
+              <select  name="school" ng-model="new_user.school_canonical_id" class="form-control" >
+                    <option value=""></option>
+                    <option value="{{school.canonical_id}}" ng-repeat="school in schools">
+                        {{school.school}}
+                    </option>
+                </select>
+          </label>
+      </div>
+      <div class="modal-footer cta">
+          <button type="submit"
+            class="btn btn-block btn-aqua btn-padding"
+           ng-disabled="userForm.email.$invalid || userForm.password.$invalid"
+           ng-show="!enable_key_edits"
+           ng-click="update_user()" >
+              Update
+          </button>
+          <button type="submit"
+            class="btn btn-block btn-aqua btn-padding"
+           ng-disabled="userForm.email.$invalid || userForm.password.$invalid"
+           ng-if="enable_key_edits"
+           ng-click="add_user()" >
+              Add User
+           </button>
+          <button type="button" class="btn btn-default btn-block btn-padding" data-dismiss="modal">
+              Cancel
+          </button>
+      </div>
+    </form>
+  </div>
+</div>

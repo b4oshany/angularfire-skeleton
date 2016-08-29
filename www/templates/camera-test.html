@@ -1,0 +1,26 @@
+
+    <main >
+        <div class="preview-pic" align="center">
+          <ng-camera
+                    capture-message="Cheeeese!"
+                    countdown="3"
+                    output-height="420"
+                    output-width="526"
+                    viewer-height="420"
+                    viewer-width="526"
+                    image-format="jpeg"
+                    jpeg-quality="100"
+                    action-message="Take picture"
+                    snapshot="vm.picture"
+                    flash-fallback-url="/vendors/webcamjs/webcam.swf"
+                    ></ng-camera>
+            <!-- for cropping:
+                crop-height="90"
+                crop-width="120"
+            -->
+        </div>
+        <br/>
+        <div class="preview-pic" align="center">
+          <img ng-if="vm.picture" ng-src="{{vm.picture}}" alt="webcam picture">
+        </div>
+    </main>

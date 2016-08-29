@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" >
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{page_title}}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" charset="utf-8"/>
+    <link rel="stylesheet" href="lib/bootstrap-social/bootstrap-social.css" />
+
+    <link rel="stylesheet" href="lib/angular-ui/build/angular-ui.min.css"/>
+
+    <!-- external -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="lib/bootstrap-table/dist/extensions/angular/bootstrap-table-angular.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <!-- <script src="lib/ng-camera/dist/ng-camera.js"></script> -->
+    <link rel="icon" href="static/img/favicon.ico" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link href="static/css/styles.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+    <div class="container" id="main-container">
+
+      <!-- Show if user is logged in -->
+      <div class="row">
+        <div class="col-md-12" id="content">
+          <ng-view></ng-view>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--- source -->
+    <script src="static/js/app.js"></script>
+    <script src="static/dist/js/services/util.js"></script>
+    <script src="static/dist/js/services/fireauth.js"></script>
+    <script src="static/dist/js/services/firestorage.js"></script>
+    <script src="static/dist/js/filters.js"></script>
+    <script src="static/js/init.js"></script>
+    <script src="static/dist/js/directives/image.js"></script>
+    <script src="static/dist/js/directives/ng-camera.js"></script>
+    <script src="static/dist/js/controllers/main.js"></script>
+    <script src="static/dist/js/controllers/users.js"></script>
+</body>
+
+</html>

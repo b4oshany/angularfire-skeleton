@@ -1,0 +1,57 @@
+<div class="card">
+    <h2>User Management Page</h2>
+</div>
+
+
+<div class="card">
+    <h4>
+        Users
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" ng-click="show_user_modal()">
+            Add User
+        </button>
+    </h4>
+    <br/>
+    <br/>
+    <div class="table-responsive">
+      <table class="table"
+        data-toggle="table"
+        data-search="true"
+        data-pagination="true"
+       data-page-list="25">
+        <thead>
+            <tr>
+                <!--<th>UID</th>-->
+                <th data-field="name" >Name</th>
+                <th data-field="email" >Email</th>
+                <th data-field="contact" >Contact</th>
+                <th data-field="role" >Role</th>
+                <th data-field="school" >School</th>
+                <th data-field="options"  >Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <!--<td>{{user.uid}}</td>-->
+                <td>{{user.firstname}} {{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.contact_num}}</td>
+                <td>{{roles[user.role]}}</td>
+                <td>{{schools[user.school_canonical_id].school}}</td>
+                <td>
+                    <button class="btn btn-info" ng-click="edit_user(user)">
+                        Edit
+                    </button>
+                    <button class="btn btn-danger" ng-click="remove_user(user)">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+<div ng-include="'templates/bits/modals/mod-user.html'"></div>
+
+
+<link rel="stylesheet" href="static/css/login.css" charset="utf-8"/>
