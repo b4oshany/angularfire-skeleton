@@ -12,8 +12,6 @@ app.run(function($rootScope, fireauth){
     site_desc: "Test App."
   };
 
-  $rootScope.roles = vocab.roles;
-
   $rootScope.page_url = location.hash;
   $rootScope.current_user = null;
   $rootScope.current_profile_user = null;
