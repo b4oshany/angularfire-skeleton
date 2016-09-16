@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{app_config.site_desc}}">
+    <meta name="author" content="{{app_config.author_name}}">
 
-    <title>{{page_title}}</title>
+    <title>{{page_title}} | {{app_config.site_name}} </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,6 +31,7 @@
     <link rel="icon" href="static/img/favicon.ico" type="image/x-icon">
 
     <!-- Custom CSS -->
+    <link href="static/dist/css/style.css" rel="stylesheet">
     <link href="static/css/styles.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -48,18 +49,10 @@
 
 <body>
 
-
-    <div class="container" id="main-container">
-
-      <!-- Show if user is logged in -->
-      <div class="row">
-        <div class="col-md-12" id="content">
-          <ng-view></ng-view>
-        </div>
-      </div>
-    </div>
-
-
+    <div ng-include="'templates/bits/header.html'"></div>
+    <span id="flash-target"></span>
+    <ng-view></ng-view>
+    <div ng-include="'templates/bits/footer.html'"></div>
 
     <!--- source -->
     <script src="static/js/app.js"></script>

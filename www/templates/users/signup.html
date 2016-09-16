@@ -1,0 +1,45 @@
+<div class="bar-margin">
+  <div class="module form-module">
+    <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    </div>
+    <div class="form">
+      <div class="row">
+        <div class="col-md-4 col-md-push-4">
+          <h2>Register your account</h2>
+          <form name="userForm">
+            <span>Firstname</span>
+            <span ng-show="userForm.firstname.$error.required">is required.</span>
+            <input name="firstname" type="text" placeholder="Firstname" ng-model="new_user.firstname" required />
+            <span>Lastname</span>
+            <span ng-show="userForm.lastname.$error.required">is required.</span>
+            <input name="lastname" type="text" placeholder="Lastname" ng-model="new_user.lastname" required />
+            <span>Email</span>
+            <span ng-show="userForm.email.$error.required">is required.</span>
+            <span ng-show="userForm.email.$error.email">is invalid.</span>
+            <input name="email" type="email" placeholder="Email" ng-model="new_user.email" required />
+            <span>Password</span>
+            <span ng-show="userForm.password.$error.required">is required.</span>
+            <input name="password" type="password" placeholder="Password" ng-model="new_user.password" required />
+            <span>Contact Number</span>
+            <span ng-show="userForm.contact_num.$error.required">is required.</span>
+            <input name="contact_num" type="text" placeholder="Contact Number" ng-model="new_user.contact_num" required />
+            <button type="submit"
+              class="btn btn-block btn-aqua btn-padding"
+             ng-disabled="userForm.email.$invalid || userForm.password.$invalid"
+             ng-click="add_user()" >
+                Register
+             </button>
+            <br/>
+            <div class="cta"><a href="#signin">Already have an account?</a></div>
+          </form>
+          <br/>
+          <a class="btn btn-block btn-social btn-google" ng-click="googleplus_login()">
+            <span class="fa fa-google"></span> Signup with Google Plus
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="static/dist/css/login.css" charset="utf-8"/>

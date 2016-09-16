@@ -1,20 +1,37 @@
-<div class="module form-module">
-  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-    <div class="tooltip">Click Me</div>
+<div>
+  <div class="module form-module">
+    <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    </div>
+    <div class="form">
+      <div class="row">
+        <div class="col-md-4 col-md-push-4">
+          <h2>Login to your account</h2>
+          <form name="loginForm" >
+            <span ng-show="loginForm.email.$error.required">Email is required.</span>
+            <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
+            <input name="email" type="email" placeholder="Email" ng-model="email" required />
+            <input name="password" type="password" placeholder="Password" ng-model="password" required />
+            <button type="submit"
+             ng-disabled="loginForm.email.$invalid || loginForm.password.$invalid"
+             ng-click="email_login()" >Login</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-push-4">
+          <br/>
+          <div class="cta"><a href="#reset-password">Forgot your password?</a></div>
+          <br/>
+          <div class="cta"><a href="#signup">Signup</a></div>
+          <br/>
+          <a class="btn btn-block btn-social btn-google" ng-click="googleplus_login()">
+            <span class="fa fa-google"></span> Sign in with Google
+          </a>
+
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form">
-    <h2>Login to your account</h2>
-    <form name="loginForm" >
-      <span ng-show="loginForm.email.$error.required">Email is required.</span>
-      <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
-      <input name="email" type="email" placeholder="Email" ng-model="email" required />
-      <input name="password" type="password" placeholder="Password" ng-model="password" required />
-      <button type="submit"
-       ng-disabled="loginForm.email.$invalid || loginForm.password.$invalid"
-       ng-click="email_login()" >Login</button>
-    </form>
-  </div>
-  <div class="cta"><a href="#reset-password">Forgot your password?</a></div>
 </div>
 
-<link rel="stylesheet" href="../static/css/styles.css" charset="utf-8"/>
+<link rel="stylesheet" href="static/dist/css/login.css" charset="utf-8"/>

@@ -23,6 +23,10 @@ app.config(function ($routeProvider) {
       controller: 'SigninCtrl',
       templateUrl: 'templates/signin.html'
     })
+    .when('/signup', {
+      controller: 'SignupCtrl',
+      templateUrl: 'templates/users/signup.html'
+    })
     .when('/logout', {
       controller: 'LogoutCtrl',
       templateUrl: 'templates/signin.html'
@@ -41,6 +45,10 @@ app.config(function ($routeProvider) {
     })
     .when('/profile', {
       controller: 'UserProfileCtrl',
+      templateUrl: 'templates/users/profile.html'
+    })
+    .when('/profile/:profile_id', {
+      controller: 'OtherUserProfileCtrl',
       templateUrl: 'templates/users/profile.html'
     })
     .otherwise({

@@ -2,26 +2,26 @@
 <div class="toppad" >
   <div class="panel panel-info">
     <div class="panel-heading">
-      <h3 class="panel-title">{{current_user.profile.firstname}} {{current_user.profile.lastname}}</h3>
+      <h3 class="panel-title">{{profile_user.firstname}} {{profile_user.lastname}}</h3>
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{current_user.photoURL || 'static/img/user.png'}}" class="img-circle img-responsive"> </div>
+        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{profile_user.photoURL || 'static/img/user.png'}}" class="img-circle img-responsive"> </div>
 
-        <div class=" col-md-9 col-lg-9 "> 
+        <div class=" col-md-9 col-lg-9 ">
           <table class="table table-user-information">
             <tbody>
               <tr>
                 <td>Role:</td>
-                <td>{{roles[current_user.profile.role]}}</td>
+                <td>{{roles[profile_user.role]}}</td>
               </tr>
               <tr>
                 <td>Email</td>
-                <td><>{{current_user.email}}</a></td>
+                <td><a href="mailto:{{profile_user.email}}">{{profile_user.email}}</a></td>
               </tr>
               <tr>
                 <td>Contact Number:</td>
-                <td>{{current_user.profile.contact_num}}</td>
+                <td>{{profile_user.contact_num}}</td>
               </tr>
             </tbody>
           </table>
@@ -29,16 +29,19 @@
       </div>
     </div>
      <div class="panel-footer">
-        <a href="mailto:info@support.com" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+        <a href="mailto:{{profile_user.email}}" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
         <span class="pull-right">
-            <button type="button" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" ng-click="edit_user(current_user)">
-                Edit
-                <i class="glyphicon glyphicon-edit"></i>
-            </button>
-            <button data-original-title="Change Profile Pic" ng-click="show_profile_pic_modal()" data-toggle="tooltip" type="button" class="btn btn-sm btn-info">
-                Change Photo
-                <i class="fa fa-file-image-o"></i>
-            </button>
+          <a href="#reset-password" class="btn btn-sm btn-primary">
+            Reset Password
+          </a>
+          <button type="button" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" ng-click="edit_user(profile_user)">
+              Edit
+              <i class="glyphicon glyphicon-edit"></i>
+          </button>
+          <button data-original-title="Change Profile Pic" ng-click="show_profile_pic_modal()" data-toggle="tooltip" type="button" class="btn btn-sm btn-info">
+              Change Photo
+              <i class="fa fa-file-image-o"></i>
+          </button>
         </span>
     </div>
   </div>
@@ -46,4 +49,4 @@
 
 <div ng-include="'templates/bits/modals/mod-user.html'"></div>
 <div ng-include="'templates/bits/modals/image-upload.html'"></div>
-<link rel="stylesheet" href="static/css/login.css" charset="utf-8"/>
+<link rel="stylesheet" href="../../static/dist/css/login.css" charset="utf-8"/>
