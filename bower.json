@@ -1,5 +1,5 @@
 {
-  "name": "deliverbus",
+  "name": "app",
   "dependencies": {
     "bootstrap-table": "1.10",
     "select2": "4.0.1",
